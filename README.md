@@ -9,6 +9,7 @@ An SMS message will only be sent if a new post appears (based on the full URL).
 Setup
 -----
 Install the required libraries via pip:
+
     pip install -r requirements.txt
 
 Usage
