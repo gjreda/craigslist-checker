@@ -30,7 +30,6 @@ def write_results(results):
         dw.writerows(results)
 
 def has_new_records(results):
-    new_results = False
     current_posts = [x['url'] for x in results]
     fields = results[0].keys()
     if not os.path.exists('results.csv'):
