@@ -61,6 +61,7 @@ def get_current_time():
     return datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
 
 if __name__ == '__main__':
+    # Craigslist search URL
     BASE_URL = 'http://chicago.craigslist.org/search/?sort=rel&areaID=11&subAreaID=&query={0}&catAbb=sss'
     try:
         TERM = sys.argv[1]
@@ -75,6 +76,7 @@ if __name__ == '__main__':
 
     results = parse_results(TERM)
     
+    # Send the SMS message if there are new results
     if has_new_records(results):
         message = "Hey - there are new Craigslist posts for: {0}".format(TERM.strip())
         print "[{0}] There are new results - sending text message to {0}".format(get_current_time(), PHONE_NUMBER)
