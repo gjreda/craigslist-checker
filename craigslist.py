@@ -7,6 +7,10 @@ import os
 import smtplib
 import config
 
+# Craigslist search URL
+BASE_URL = ('http://chicago.craigslist.org/search/',
+            '?sort=rel&areaID=11&subAreaID=&query={0}&catAbb=sss')
+
 def parse_results(search_term):
     results = []
     search_term = search_term.strip().replace(' ', '+')
@@ -61,8 +65,6 @@ def get_current_time():
     return datetime.strftime(datetime.now(), '%Y-%m-%d %H:%M:%S')
 
 if __name__ == '__main__':
-    # Craigslist search URL
-    BASE_URL = 'http://chicago.craigslist.org/search/?sort=rel&areaID=11&subAreaID=&query={0}&catAbb=sss'
     try:
         TERM = sys.argv[1]
         PHONE_NUMBER = sys.argv[2].strip().replace('-', '')
