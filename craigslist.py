@@ -8,7 +8,7 @@ import smtplib
 import config
 
 # Craigslist search URL
-BASE_URL = ('http://chicago.craigslist.org/search/',
+BASE_URL = ('http://chicago.craigslist.org/search/'
             '?sort=rel&areaID=11&subAreaID=&query={0}&catAbb=sss')
 
 def parse_results(search_term):
