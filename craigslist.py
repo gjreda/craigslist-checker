@@ -19,8 +19,8 @@ def parse_results(search_term):
     rows = soup.find('div', 'content').find_all('p', 'row')
     for row in rows:
         url = 'http://chicago.craigslist.org' + row.a['href']
-        # price = row.find('span', 'price').get_text()
-        create_date = row.find('span', 'date').get_text()
+        # price = row.find('span', class_='price').get_text()
+        create_date = row.find('time').get('datetime')
         title = row.find_all('a')[1].get_text()
         results.append({'url': url, 'create_date': create_date, 'title': title})
     return results
